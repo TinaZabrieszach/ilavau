@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I lava u</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Header Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+    <header id="header">
+
+        <div class="title">
+            <h1 id="typing-title"></h1>
+            <span id="cursor" class="cursor">|</span> <!-- Cursor parpadeante -->
+        </div>
+    </header>
+
+    <!-- Letter Section
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section id="letter">
+        <h2>A letter from my heart!</h2>
+
+        <div class="envlope-wrapper">
+            <div id="envelope" class="close">
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+                <div class="letter">
+
+                </div>
+                <div class="hearts">
+                    <div class="heart a1"></div>
+                    <div class="heart a2"></div>
+                    <div class="heart a3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="reset">
+            <button id="open">Open</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div id="modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>Mi esposo, mi vida, mi universo, mi Earthshine</h2>
+                <p>¡Feliz aniversario! ha pasdo un poco más de un mes, porque tu esposo es un poco lento y se tardó con
+                    el regalo pero finalmente ¡Aquí está!</p>
+                <p>Hay tantas cosas que quiero decirte, y como siempre, parece que no tengo las palabras justas para
+                    expresarlo. Si bien nunca me cansaré de decir que te amo, siento que esas palabras no le hacen
+                    justicia a lo que siento ¿te sucede lo mismo? no soy un lenguista pero estoy seguro que no hay
+                    palabras o expresión en todo el universo que en realidad pueda poner en palabras lo que siento por
+                    ti.</p>
+                <p>Eres mi compañero, mi mejor amigo, aquel que me hace reír, el que completa las partes rotas y me hace
+                    sentir cálido y amado. Eres mi hogar, mi confort y mi refugio. Eres mi todo y no puedo agradecerle
+                    lo suficiente a la vida por haberte puesto en mi camino, agradezco a los dioeses y te agradezco a ti
+                    por escribirme por primera vez.</p>
+                <p>Siento que podría escribir un manifesto sobre cuanto te amo y aún así quedarme corto, así que en
+                    cambio haré un juramento de comprometerme en demostrarte mi amor todos los días, de no dar por
+                    sentado este sentimiento y cuidarlo como se merece. Te amo Matt Teyssier de Arai, te amo y no puedo
+                    esperar a ver que nos despara el futuro, se que será maravilloso porque estarás a mi lado</p>
+                <p id="dedicatoria"> Siempre tuyo, tu esposo : Hiro Arai de Teyssier</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Timeline Section
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="timeline-container">
+        <h2>Our story</h2>
+        <div class="timeline">
+            <div class="line"></div>
+
+            <div class="card">
+                <img src="img/timeline/1.png" alt="primera charla">
+                <div class="description">Nuestra primera conversación, ninguno de los dós sabíamos que estábamos a punto
+                    de conocer nuestra otra mitad</div>
+            </div>
+
+            <div class="card">
+                <img src="img/timeline/2.png" alt="protéganlo">
+                <div class="description">Recuerdo que me setní tan cálido, era una tontería pero no podía recordar la
+                    última vez que alguien quizo protegerme. Desde el comienzo ya me hacías sentir seguro</div>
+            </div>
+
+            <div class="card">
+                <img src="img/timeline/3.png" alt="señor Teyssier de Arai">
+                <div class="description">¿Tú también sentiste que tu corazón podría explotar cuando yo dije tu apellido
+                    con el mío? Porque así me sentí cuando tu me llamaste Señor Arai de Teyssier.</div>
+            </div>
+
+            <div class="card">
+                <img src="img/timeline/4.png" alt="Arai de Teyssier">
+                <div class="description">Aún puedo recordar lo mucho que latía mi corazón cuando dije nuestros apellidos
+                    juntos. Era una tontería, una broma en ese momento pero me encontré deseando que fuera real;
+                    agradezco que se hiciera realidad.</div>
+            </div>
+
+            <div class="card">
+                <img src="img/timeline/5.png" alt="Confeción">
+                <div class="description">Nunca he sido valiente por más que tu digas lo contrario, creo que si hubiera
+                    sido otra persona siplemente lo hubiera negado, me hubiera hecho el loco pero contigo todo fue
+                    diferente ¿como podría negar un amor tan intenso? Pensar que a partir de allí comenzó nuestra
+                    relación. Te amo, más de lo que las palabras pueden expresar.</div>
+            </div>
+
+            <div class="card">
+                <img src="img/timeline/6.png" alt="Mi primer te amo">
+                <div class="description">Se seintieron tan natural aquellas palabras, se deslizaron de mis labios sin
+                    siquiera pensar porque amarte es tan sencillo como respirar, viene a mi como una segunda naturaleza.
+                    Te amo, te amo, te amo y desde ese día hasta el día en que me muera no dejaré de decírtelo. </div>
+            </div>
+
+            <div class="card">
+                <img src="img/timeline/cita.jpg" alt="Nuestra pirimera cita">
+                <div class="description">Recuerdo que quería planear algo especial para nuestra primera cita, quería
+                    mimarte, quería poder demostrar lo mucho que te amo. Nunca he dado tu amor por sentado, mereces que
+                    te amen con intencidad, que te amen con locura y que te lo demuestren.</div>
+            </div>
+
+            <div class="card">
+                <img src="img/timeline/7.png" alt="Tu primer te amo">
+                <div class="description">Este recuerdo está gravado en mi memoria, escuchar esas palabras por primera
+                    vez...Earthshine, no sabes lo feliz que me hizo en ese momento y lo feliz que me hace sentir ahora
+                    cuando lo dices. Nunca me cansaré de escucharte decir "te amo" se ha convertido en mis palabras
+                    favoritas siempre que salgan de tus labios. Te amo, te amo, te amo y te amo. </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spoty Section
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="spotify-playlist">
+        <h2>Soundtrack to my heart</h2>
+        <div>
+            <iframe style="border-radius:12px"
+                src="https://open.spotify.com/embed/playlist/4cYcuVbI4CldWXHRK88tcL?utm_source=generator&theme=0"
+                width="100%" height="352" frameborder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- galeria Section
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <section>
+        <h2>US</h2>
+        <div class="gallery">
+            <div class="image-container">
+                <img src="img/us/1.jpg" alt="Imagen 1">
+            </div>
+            <div class="image-container">
+                <img src="img/us/2.jpg" alt="Imagen 2">
+            </div>
+            <div class="image-container">
+                <img src="img/us/3.jpg" alt="Imagen 3">
+            </div>
+            <div class="image-container">
+                <img src="img/us/4.jpg" alt="Imagen 4">
+            </div>
+            <div class="image-container">
+                <img src="img/us/5.jpg" alt="Imagen 5">
+            </div>
+            <div class="image-container">
+                <img src="img/us/6.jpg" alt="Imagen 6">
+            </div>
+        </div>
+    </section>
+    <script src="main.js" defer></script>
+    <footer class="footer">
+       
+        <div class="fcontainer">
+            <p>&copy; Hecho con mucho cariño por Hiro para Matt 🤍</p>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

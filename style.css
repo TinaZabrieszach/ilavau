@@ -1,0 +1,574 @@
+
+@import url("https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap");
+/* Base Styles
+********************************************************************* */
+*{
+    box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Esto oculta el scroll horizontal */
+}
+
+body {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    font-size: 1.5em;
+	line-height: 1.6;
+	font-weight: 400;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background: black; /* Fondo negro para simular el espacio */
+}
+
+.star {
+    position: absolute;
+    background: rgb(255, 255, 255); /* Color blanco para las estrellas */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite alternate;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+
+header {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+    width: 100%;
+	height: 90vh;
+    background-image: url(ig1.jpg);
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; 
+
+}
+
+
+.title {
+    position: relative; /* Para posicionar el cursor */
+    padding-top: 20px; /* Espacio en la parte superior */
+}
+
+.title h1 {
+    font-size: 80px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 0.85;
+    color: rgb(188, 185, 185); /* Cambia el color del texto a negro */
+    margin: 0;
+    padding: 0;
+    font-style: italic; /* Aplica el estilo cursivo */
+    font-family: 'Patrick Hand', cursive; /* Cambia la fuente a Patrick Hand */
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink 0.7s step-end infinite; /* Animación de parpadeo */
+    font-size: 80px; /* Asegúrate de que el cursor tenga el mismo tamaño que el texto */
+    color: black; /* Color del cursor */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0; /* Hace que el cursor parpadee */
+    }
+}
+
+
+/* Media Queries para hacer el header más responsive */
+@media (max-width: 768px) {
+    header {
+        height: 50vh; /* Reduce la altura en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 40vh; /* Reduce aún más la altura en pantallas muy pequeñas */
+    }
+}
+
+@media only screen and (max-height: 700px) {
+.title h1 {
+	font-size: 80px;
+}
+}
+.title p {
+	max-width: 600px;
+	margin: 0 auto;
+	line-height: 150%;
+}
+
+@media only screen and (max-width: 500px) {
+.title h1 {
+	font-size: 65px;
+}
+}
+.title .icon {
+	color: #741212;
+	font-size: 50px;
+}
+
+h2 {
+    font-size: 3.6rem;
+    line-height: 1.25;
+    letter-spacing: -.1rem;
+    text-align: center; /* Centra el texto */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    margin: 20px; 
+    color: #aaa;/* Establece un margen de 20px alrededor */
+}
+
+/* Letter Section
+********************************************************************* */
+/* Definición de colores */
+:root {
+    --color-env: #d3d3d3; /* gris claro */
+    --color-env2: #a9a9a9; /* gris medio claro */
+    --color-flap: #808080; /* gris medio */
+    --color-bg: #f0f0f0; /* gris muy claro */
+    --color-heart: #8f1010;
+}
+
+h2 {
+    font-size: 3.6rem;
+    line-height: 1.25;
+    letter-spacing: -.1rem;
+    text-align: center; /* Centra el texto */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    margin: 20px; /* Establece un margen de 20px alrededor */
+}
+
+.envlope-wrapper {
+    display: flex; /* Usar flexbox para centrar */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; 
+	margin-top: 10px;/* Centrar verticalmente */
+    height: 2000vh; /* Asegúrate de que ocupe toda la altura de la ventana */
+    position: relative; /* Asegura que el contexto de z-index funcione */
+    z-index: 1; /* Asegúrate de que esté por debajo de otros elementos */
+}
+
+
+/* Estilos del sobre */
+#envelope {
+    position: relative;
+    width: 280px; /* $env-width */
+    height: 180px; /* $env-height */
+    border-bottom-left-radius: 6px; /* $env-border-radius */
+    border-bottom-right-radius: 6px; /* $env-border-radius */
+    margin: 0 auto;
+	z-index: 2;
+    top: 20px;
+    background-color: var(--color-flap);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+
+.flap {
+    border-left: 140px solid transparent; /* ($env-width / 2) */
+    border-right: 140px solid transparent; /* ($env-width / 2) */
+    border-bottom: 86px solid transparent; /* ($env-height / 2) - 8 */
+    border-top: 96px solid var(--color-flap); /* ($env-height / 2) + 8 */
+    transform-origin: top;
+    pointer-events: none;
+}
+
+.pocket {
+    border-left: 140px solid var(--color-env); /* ($env-width / 2) */
+    border-right: 140px solid var(--color-env); /* ($env-width / 2) */
+    border-bottom: 90px solid var(--color-env2); /* ($env-height / 2) */
+    border-top: 90px solid transparent; /* ($env-height / 2) */
+    border-bottom-left-radius: 6px; /* $env-border-radius */
+    border-bottom-right-radius: 6px; /* $env-border-radius */
+}
+
+.letter {
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 90%;
+    top: 5%;
+    border-radius: 6px; /* $env-border-radius */
+    box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
+}
+
+.letter:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: 
+        linear-gradient(180deg, 
+        rgba(255,255,255,0.00) 25%, 
+        rgba(215,227,239,0.70) 55%, 
+        rgba(215,227,239,1.00) 100%);
+}
+.words {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 14%;
+    background-color: #EEEFF0;
+}
+.words.line1 {
+    top: 15%;
+    width: 20%;
+    height: 7%;
+}
+.words.line2 {
+    top: 30%;
+}
+.words.line3 {
+    top: 50%;
+}
+.words.line4 {
+    top: 70%;
+}
+.open .flap {
+    transform: rotateX(180deg);
+    transition: transform .4s ease, z-index .6s;
+    z-index: 1;
+}
+.close .flap {
+    transform: rotateX(0deg);
+    transition: transform .4s .6s ease, z-index 1s;
+    z-index: 5;
+}
+.close .letter {
+    transform: translateY(0px); 
+    transition: transform 0.4s ease, z-index 1s;
+    z-index: 1;
+}
+
+.open .letter {
+    transform: translateY(-60px); /* Ajusta este valor según la altura deseada */
+    transition: transform 0.4s 0.6s ease, z-index 0.6s;
+    z-index: 2;
+}
+
+/* Estilos para los corazones */
+.hearts {
+    position: absolute;
+    top: 10px; /* Ajusta este valor según la altura deseada */
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transform: rotate(-50deg);
+   
+}
+
+
+.heart {
+    position: absolute;
+    width: 50px; /* Ancho total del corazón */
+    height: 50px; /* Altura total del corazón */
+    background: #D00000; /* Color del corazón */
+    margin: 7px; /* Espacio entre corazones */
+	pointer-events: none;
+	opacity: 0; /* Inicialmente ocultos */
+	transition: transform 1s ease, opacity 0.5s ease;
+
+	
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 50px; /* Ancho de los pseudo-elementos */
+    height: 50px; /* Altura de los pseudo-elementos */
+    background: #D00000; /* Color del corazón */
+    border-radius: 50%; /* Hace que sean circulares */
+	transform-origin: 0 100%;
+	
+}
+
+.heart:before {
+    top: -25px; /* Mueve hacia arriba para que se una con el corazón */
+    left: 0; /* Alinea a la izquierda */
+}
+
+.heart:after {
+    left: 25px; /* Mueve hacia la derecha para que se una con el corazón */
+    top: 0; /* Alinea al nivel del corazón */
+	transform-origin: 100% 100%;
+   
+}
+.close .heart {
+    opacity: 0;
+    animation: none;
+}
+.heart.a1 {
+    left: 10%;
+}
+
+.heart.a2 {
+    left: 40%;
+}
+
+.heart.a3 {
+    left: 70%;
+}
+
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px); /* Ajusta la altura de elevación */
+        opacity: 1; /* Mantener la opacidad hasta el final */
+    }
+}
+
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.envlope-wrapper {
+    height: 400px;
+}
+
+.reset {
+    text-align: center;
+}
+
+.reset button {
+    font-weight: 800;
+    font-style: normal;
+    transition: all 0.1s linear;
+    background-color: transparent;
+    border: solid 2px #626669; /* Color del borde */
+    border-radius: 4px;
+    color: #515558; /* Color del texto */
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 5px;
+    padding: 10px;
+    line-height: 1em;
+    text-decoration: none;
+    min-width: 120px;
+    cursor: pointer;
+}
+.reset button:hover {
+    background-color: #4e5458; /* Reemplaza con el color deseado */
+    color: #fff; /* Color del texto al hacer hover */
+}
+
+
+/* Timeline Section
+********************************************************************* */
+.timeline-container h2 {
+    padding-top: 50px;
+}
+
+.timeline {
+    padding-top: 20px;
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+.card {
+    background: rgb(238, 237, 237);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(56, 55, 55, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.description {
+    margin-top: 10px;
+    text-align: center;
+}
+.line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #5e605f;
+    z-index: -1;
+}
+
+
+/* Spoty Section
+********************************************************************* */
+/* Spoty Section
+********************************************************************* */
+.spotify-playlist {
+    text-align: center; /* Centra el contenido dentro de la sección */
+    padding: 0 5%; /* Usa un porcentaje para el padding lateral */
+    padding-bottom: 30px;
+}
+
+.spotify-playlist h2 {
+    padding-top: 100px;
+}
+
+iframe {
+    display: block; /* Asegura que el iframe se muestre como un bloque */
+    margin: 0 auto; /* Centra el iframe */
+    width: 100%; /* Hace que el iframe ocupe el 100% del contenedor */
+    max-width: 600px; /* Limita el ancho máximo del iframe */
+    height: 380px; /* Altura fija para el iframe */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .spotify-playlist {
+        padding: 0 20px; /* Reduce el padding lateral en pantallas pequeñas */
+    }
+
+    .spotify-playlist h2 {
+        padding-top: 50px; /* Reduce el padding superior en pantallas pequeñas */
+    }
+
+    iframe {
+        height: 300px; /* Ajusta la altura del iframe en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .spotify-playlist h2 {
+        padding-top: 30px; /* Reduce aún más el padding superior en pantallas muy pequeñas */
+    }
+
+    iframe {
+        height: 250px; /* Ajusta la altura del iframe en pantallas muy pequeñas */
+    }
+}
+
+
+/* Gallery Section
+********************************************************************* */
+.gallery h2{
+    padding-top: 50%;
+}
+
+
+.gallery {
+    display: grid; /* Usar grid para un mejor control de filas y columnas */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las imágenes */
+    margin: 20px auto; /* Espacio alrededor de la galería y centrado */
+    max-width: 1200px; /* Ancho máximo de la galería */
+    padding: 0 30px; /* Espacio lateral para evitar que las imágenes toquen el borde */
+}
+
+.gallery .image-container {
+    position: relative; /* Necesario para el posicionamiento de la imagen */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+}
+
+.gallery img {
+    width: 100%; /* Las imágenes ocuparán el 100% del ancho de su celda */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de zoom */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la imagen al 105% al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
